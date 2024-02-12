@@ -20,11 +20,10 @@ HIDE_DATASET = True  # set False when 100% sure about repo quality
 ##################################
 # * After uploading to instance ##
 ##################################
-LICENSE: License = License.MIT(
-    source_url="https://github.com/bosch-ros-pkg/bstld/blob/master/LICENSE"
+LICENSE: License = License.Custom(
+    source_url="https://hci.iwr.uni-heidelberg.de/system/files/private/datasets/1639193981/non-commercial_license.pdf"
 )
 APPLICATIONS: List[Union[Industry, Domain, Research]] = [
-    Industry.Utilities(),
     Industry.Automotive(),
 ]
 CATEGORY: Category = Category.EnergyAndUtilities(extra=Category.SelfDriving())
@@ -70,10 +69,10 @@ CITATION_URL: Optional[str] = None
 AUTHORS: Optional[List[str]] = ["Karsten Behrendt", "Libor Novak", "Rami Botros"]
 AUTHORS_CONTACTS: Optional[List[str]] = ["github@kbehrendt.com"]
 
-ORGANIZATION_NAME: Optional[Union[str, List[str]]] = (
-    "Department of Cybernetics Technical University in Prague, Czech"
+ORGANIZATION_NAME: Optional[Union[str, List[str]]] = "Bosch Automated Driving Team, Czech"
+ORGANIZATION_URL: Optional[Union[str, List[str]]] = (
+    "https://www.bosch.com/stories/topics/automated-driving/"
 )
-ORGANIZATION_URL: Optional[Union[str, List[str]]] = "https://cyber.felk.cvut.cz/"
 
 # Set '__PRETEXT__' or '__POSTTEXT__' as a key with string value to add custom text. e.g. SLYTAGSPLIT = {'__POSTTEXT__':'some text}
 SLYTAGSPLIT: Optional[Dict[str, Union[List[str], str]]] = {
