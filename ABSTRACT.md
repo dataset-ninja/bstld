@@ -10,13 +10,13 @@ Accurate detection and classification of traffic lights are vital for the succes
 
 Within the realm of perception, identifying and categorizing traffic signs and lights stands out as a critical task. Traffic lights, in particular, pose a formidable challenge due to their small size and potential confusion with other urban elements such as lamps, decorations, and reflections. Recent advancements in deep neural networks have significantly enhanced various fields of machine learning, particularly computer vision. Deep learning techniques have been successfully employed for tasks such as image classification, end-to-end object detection, pixel-precise object segmentation, and numerous other applications.
 
-<img src="https://github.com/dataset-ninja/bstld/assets/120389559/f8272848-022a-443b-b561-5bb512f77094" alt="image" width="1000">
+<img src="https://github.com/dataset-ninja/bstld/assets/120389559/f8272848-022a-443b-b561-5bb512f77094" alt="image" width="800">
 
 <span style="font-size: smaller; font-style: italic;">Sample detections of small trafﬁc lights in an image. The top image is taken at the full resolution of 1280 × 720. At the bottom, the enlarged crop shows detected trafﬁc lights of size about 6 × 12 pixels. All lights are correctly classiﬁed as yellow.</span>
 
 ## Dataset description
 
-The authors publish the Bosch Small Trafﬁc Lights Dataset, an accurately labeled dataset for detecting, classifying, and tracking trafﬁc lights. Dataset contains RGB color images at the resolution of 1280 × 720 pixels. For training, we collected more than 5000 images, mainly along El Camino Real in the San Francisco Bay Area in California. Overall, 10,756 trafﬁc lights are labeled within those images. The different trafﬁc light sizes within the training set vary between approximately 1 and 85 pixels in width with the mean of 11.3 pixels.
+The authors publish the Bosch Small Trafﬁc Lights Dataset, an accurately labeled dataset for detecting, classifying, and tracking trafﬁc lights. Dataset contains RGB color images at the resolution of 1280 × 720 pixels. For training, the authors collected more than 5000 images, mainly along El Camino Real in the San Francisco Bay Area in California. Overall, 10,756 trafﬁc lights are labeled within those images. The different trafﬁc light sizes within the training set vary between approximately 1 and 85 pixels in width with the mean of 11.3 pixels.
 
 |         | Width | Height | Area   |
 |---------|-------|--------|--------|
@@ -27,7 +27,7 @@ The authors publish the Bosch Small Trafﬁc Lights Dataset, an accurately label
 
 <span style="font-size: smaller; font-style: italic;">Training set bounding box sizes in pixels.</span>
 
-The label distribution of the different trafﬁc light states is heavily skewed towards the three most common types which are *green*, *red*, and *yellow*. Also, because of the difference between the sampling frequency of our camera and the trafﬁc light refresh rate, a lot of trafﬁc lights frequently appear to be *off*. Whenever this is the case, we opted for labeling them as off instead of their current state.
+The label distribution of the different trafﬁc light states is heavily skewed towards the three most common types which are *green*, *red*, and *yellow*. Also, because of the difference between the sampling frequency of our camera and the trafﬁc light refresh rate, a lot of trafﬁc lights frequently appear to be *off*. Whenever this is the case, the authors opted for labeling them as off instead of their current state.
 
 |                  | Training | In %  | Test | In %  |
 |------------------|----------|-------|------|-------|
@@ -62,6 +62,6 @@ Identifying objects within images presents significant challenges, particularly 
 
 The YOLO architecture has demonstrated impressive performance on datasets like PASCAL VOC 2007 and 2012, achieving processing speeds of up to 45 frames per second. However, a grid-based approach to detection presents limitations, particularly in suggesting bounding boxes per cell. Authors have noted difficulties in detecting small objects and clusters of objects. Additionally, there's a challenge in balancing image input sizes, processing speed, and memory usage. Given that the average width of traffic lights in our datasets is only 10 pixels, adjustments are necessary to enable the network to detect small objects effectively. To address this, the authors have implemented a multi-step approach. Instead of feeding the entire image into the network, they partition the image into different patches and evaluate each patch separately. During training, random crops of the image are utilized as inputs to the network, leading to improved convergence speed and accuracy. For the final detection phase, they focus on three specific crops in the upper part of the image, as this is where most traffic lights are typically located. The authors have also developed a heatmap to visualize the occurrences of traffic lights. Each network has a receptive field of 448 × 448 pixels, allowing for comprehensive analysis of the image data.
 
-<img src="https://github.com/dataset-ninja/bstld/assets/120389559/fbad9b91-2d29-4d44-94b1-f9fc8f6bca3c" alt="image" width="1000">
+<img src="https://github.com/dataset-ninja/bstld/assets/120389559/fbad9b91-2d29-4d44-94b1-f9fc8f6bca3c" alt="image" width="800">
 
 <span style="font-size: smaller; font-style: italic;">Sample image from test-set. The authors network is evaluated at the positions within the image, shown in red, teal, and yellow. Two green trafﬁc lights are detected, one by a cell of the yellow network, the other by red.</span>
