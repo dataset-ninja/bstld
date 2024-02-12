@@ -1,6 +1,6 @@
 Dataset **BSTLD** can be downloaded in [Supervisely format](https://developer.supervisely.com/api-references/supervisely-annotation-json-format):
 
- [Download](Set 'HIDE_DATASET=False' to generate download link)
+ [Download](https://assets.supervisely.com/supervisely-supervisely-assets-public/teams_storage/J/c/A8/iTfWA1QUPXUYQRXBZcO4b1wGLrsv45yh6QQRnbm0nLrMPVZ42GlW1LYqueZNnQ5WPW4dFjRRn0HdhrqW3SbaiXgLv0MKgsKBLdj14M4G76l4BQiUAiBfNqJ4HXsW.tar)
 
 As an alternative, it can be downloaded with *dataset-tools* package:
 ``` bash
