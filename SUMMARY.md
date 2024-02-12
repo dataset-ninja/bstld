@@ -1,0 +1,7 @@
+**BSTLD: Bosch Small Traffic Lights Dataset** is a dataset for an object detection task. It is used in the utilities and automotive industries. 
+
+The dataset consists of 13427 images with 24241 labeled objects belonging to 4 different classes including *green*, *red*, *off*, and other: *yellow*.
+
+Images in the BSTLD dataset have bounding box annotations. There are 3127 (23% of the total) unlabeled images (i.e. without annotations). There are 2 splits in the dataset: *test* (8334 images) and *train* (5093 images). Alternatively, the dataset could be split into 6 sequences: ***2015-10-05-14-40-46_bag*** (1546 images), ***2015-10-05-11-26-32_bag*** (651 images), ***2015-10-05-10-55-33_bag*** (540 images), ***2017-02-03-11-44-56_los_altos_mountain_view_traffic_lights_bag*** (518 images), ***2015-05-29-15-29-39_arastradero_traffic_light_loop_bag*** (347 images), and ***2015-10-05-10-52-01_bag*** (68 images), or into 5 traffic light direction: ***left*** (1270 objects), ***straight*** (29 objects), ***right*** (18 objects), ***straight right*** (3 objects), and ***straight left*** (2 objects). Additionally, labels contains information about ***occluded***. Explore it in supervisely labeling tool. The dataset was released in 2017 by the Department of Cybernetics Technical University in Prague, Czech.
+
+<img src="https://github.com/dataset-ninja/bstld/raw/main/visualizations/poster.png">
